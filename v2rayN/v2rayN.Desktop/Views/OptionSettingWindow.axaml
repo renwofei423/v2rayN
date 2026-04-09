@@ -338,7 +338,7 @@
                             Grid.Column="1"
                             Width="200"
                             Margin="{StaticResource Margin4}"
-                            Watermark="{x:Static resx:ResUI.TbSettingsSendThroughHint}" />
+                            Watermark="0.0.0.0" />
                         <TextBlock
                             Grid.Row="21"
                             Grid.Column="2"

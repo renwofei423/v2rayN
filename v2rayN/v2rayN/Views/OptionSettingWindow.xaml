@@ -406,7 +406,7 @@
                             Width="200"
                             Margin="{StaticResource Margin8}"
                             Style="{StaticResource DefTextBox}"
-                            materialDesign:HintAssist.Hint="{x:Static resx:ResUI.TbSettingsSendThroughHint}" />
+                            materialDesign:HintAssist.Hint="0.0.0.0" />
                         <TextBlock
                             Grid.Row="21"
                             Grid.Column="2"

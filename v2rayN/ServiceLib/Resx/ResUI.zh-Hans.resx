@@ -1320,9 +1320,6 @@
   <data name="TbSettingsSendThrough" xml:space="preserve">
     <value>本地出站地址 (SendThrough)</value>
   </data>
-  <data name="TbSettingsSendThroughHint" xml:space="preserve">
-    <value>例如 192.168.1.10</value>
-  </data>
   <data name="TbSettingsSendThroughTip" xml:space="preserve">
     <value>仅对 Xray 生效，填写本机 IPv4；留空则不设置。</value>
   </data>

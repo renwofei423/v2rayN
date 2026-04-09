@@ -4015,15 +4015,6 @@ namespace ServiceLib.Resx {
         }
         
         /// <summary>
-        ///   查找类似 e.g. 192.168.1.10 的本地化字符串。
-        /// </summary>
-        public static string TbSettingsSendThroughHint {
-            get {
-                return ResourceManager.GetString("TbSettingsSendThroughHint", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   查找类似 Local outbound address (SendThrough) 的本地化字符串。
         /// </summary>
         public static string TbSettingsSendThrough {

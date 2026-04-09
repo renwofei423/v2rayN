@@ -415,7 +415,37 @@ public partial class CoreConfigV2rayService(CoreConfigContext context)
         var sendThrough = _config.CoreBasicItem.SendThrough?.TrimEx();
         foreach (var outbound in _coreConfig.outbounds ?? [])
         {
-            outbound.sendThrough = sendThrough.IsNullOrEmpty() ? null : sendThrough;
+            outbound.sendThrough = ShouldApplySendThrough(outbound, sendThrough) ? sendThrough : null;
         }
+    }
+
+    private static bool ShouldApplySendThrough(Outbounds4Ray outbound, string? sendThrough)
+    {
+        if (sendThrough.IsNullOrEmpty())
+        {
+            return false;
+        }
+
+        if (outbound.protocol is "freedom" or "blackhole" or "dns" or "loopback")
+        {
+            return false;
+        }
+
+        if (outbound.streamSettings?.sockopt?.dialerProxy.IsNullOrEmpty() == false)
+        {
+            return false;
+        }
+
+        var outboundAddress = outbound.settings?.servers?.FirstOrDefault()?.address
+            ?? outbound.settings?.vnext?.FirstOrDefault()?.address
+            ?? outbound.settings?.address?.ToString()
+            ?? string.Empty;
+
+        if (outboundAddress.Equals("localhost", StringComparison.OrdinalIgnoreCase))
+        {
+            return false;
+        }
+
+        return !IPAddress.TryParse(outboundAddress, out var address) || !IPAddress.IsLoopback(address);
     }
 }

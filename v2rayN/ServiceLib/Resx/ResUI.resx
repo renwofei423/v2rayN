@@ -1323,9 +1323,6 @@
   <data name="TbSettingsSendThrough" xml:space="preserve">
     <value>Local outbound address (SendThrough)</value>
   </data>
-  <data name="TbSettingsSendThroughHint" xml:space="preserve">
-    <value>e.g. 192.168.1.10</value>
-  </data>
   <data name="TbSettingsSendThroughTip" xml:space="preserve">
     <value>Only applies to Xray. Fill in a local IPv4 address; leave empty to disable.</value>
   </data>
